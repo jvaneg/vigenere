@@ -20,7 +20,10 @@ def main(argv):
             characters[char] = freqList
             characters[char][i % keyLength] += 1
 
-    print(characters)
+    #print(characters)
+
+    for (k,v) in characters.items():
+        print(k + " - " + str(v))
                           
     
     
