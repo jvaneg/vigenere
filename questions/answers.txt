@@ -1,0 +1,12 @@
+Warmup for Freq Analysis
+    1. the - 14933
+    2. nationalgymnasiummuseumsanatoriumandsuspensoriumsordinaryprivatdocentgeneralhistoryspecialprofessordoctor
+    3. shakespeare - 39
+
+Basic Encryption
+    1. snowboard
+    2. ch 13
+
+Breaking Viginere
+    1. 5 characters
+    2. 

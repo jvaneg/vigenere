@@ -1,0 +1,17 @@
+1.
+
+14933 the
+
+cat ulysses.txt | tr '[:space:]' '[\n*]' | tr '[:upper:]' '[:lower:]' | tr -d '[:punct:]—' | grep -v "^\s*$" | sort | uniq -c | sort -bnr > c1.txt; tac c1.txt
+
+2.
+
+nationalgymnasiummuseumsanatoriumandsuspensoriumsordinaryprivatdocentgeneralhistoryspecialprofessordoctor
+
+cat ulysses.txt | tr '[:space:]' '[\n*]' | tr '[:upper:]' '[:lower:]' | tr -d '[:punct:]—' | grep -v "^\s*$" | sort | uniq -c | awk '{x=length($2);print x" "$0}'| sort -nrk1 > c2.txt; tac c2.txt
+
+3.
+
+11      39 shakespeare
+
+cat ulysses.txt | tr '[:space:]' '[\n*]' | tr '[:upper:]' '[:lower:]' | tr -d '[:punct:]—' | grep -v "^\s*$" | sort | uniq -c | awk '{x=length($2);if($1 > 25) print x" "$0}'| sort -nrk1 > c3.txt; tac c3.txt 
