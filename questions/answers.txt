@@ -9,4 +9,4 @@ Basic Encryption
 
 Breaking Viginere
     1. 5 characters
-    2. 
+    2. swing

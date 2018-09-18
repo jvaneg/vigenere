@@ -24,10 +24,43 @@ def main(argv):
 
     for (k,v) in characters.items():
         print(k + " - " + str(v))
-                          
+
+    #if a third arg was added
+    if(len(argv) > 3):
+        #list of chars that likely correspond to E (this is very naive but will probably work on big enough inputs)
+        #you should still manually inspect the frequency analysis to figure out the key        
+        letterEList = [None] * keyLength
+        letterEFreq = [0] * keyLength
+
+        firstIteration = True
+
+        for(k,v) in characters.items():
+            if(firstIteration):
+                firstIteration = False
+                letterEFreq = v
+                for i in range(0,len(letterEList)):
+                    letterEList[i] = k
+            else:
+                for i in range(0,len(v)):
+                    if(v[i] > letterEFreq[i]):
+                        letterEList[i] = k
+                        letterEFreq[i] = v[i]
+
+
+        print("Most frequently occurring in each slot (likely to be letter E):")
+        print(letterEList)
     
-    
-    print("Done")
+        eChar = 'E'
+        eCharData = bytearray(eChar.encode())
+        potentialKeyData = bytearray(("".join(letterEList)).encode())
+
+        keyString = ""
+
+        for byte in potentialKeyData:
+            keyString += chr(eCharData[0] ^ byte)
+
+        print("Using E as most common letter in alphabet")
+        print("The key is most likely: " + keyString)
     
 
     
